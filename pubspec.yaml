@@ -1,0 +1,36 @@
+name: flutter_application_coba_capsten
+description: "A new Flutter project."
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.2.2
+  cupertino_icons: ^1.0.8
+  image_picker: ^0.8.7+3
+  # qr_code_tools: ^1.0.3
+  # qr_code_scanner: ^0.6.1
+  # permission_handler: ^10.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+    
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
+    # - assets/background.jpg
+
+  fonts:
+    - family: Lemon
+      fonts:
+        - asset: assets/fonts/LEMON.ttf
