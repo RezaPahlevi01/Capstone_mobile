@@ -1,46 +1,22 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_application_coba_capsten/login/landingpage.dart';
-import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:flutter_application_coba_capsten/topup.dart';
+import 'package:http/http.dart' as http;
+import 'package:flutter/material.dart';
+import 'package:flutter_application_coba_capsten/pengepul.dart';
 
-class FormLogin extends StatelessWidget {
-  FormLogin({Key? key}) : super(key: key);
+class FormLoginpengepul extends StatelessWidget {
+  FormLoginpengepul ({Key? key}) : super(key: key);
 
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-
-  // Fungsi validasi email
-  bool validateEmail(String email) {
-    return email.isNotEmpty &&
-        email.contains('@') &&
-        email.endsWith('@gmail.com');
-  }
-
-  bool validatePassword(String password) {
-    return password.length >= 6;
-  }
 
   void _login(BuildContext context) async {
     String email = _emailController.text;
     String password = _passwordController.text;
 
-    if (!validateEmail(email)) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Email tidak valid. Gunakan email @gmail.com')),
-      );
-      return;
-    }
-
-    if (!validatePassword(password)) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Password harus memiliki minimal 6 karakter')),
-      );
-      return;
-    }
-
     try {
       final response = await http.post(
-        Uri.parse('http://localhost:3000/api/login'),
+        Uri.parse('http://localhost:3000/api/loginPengepul'),
         headers: {"Content-Type": "application/json"},
         body: json.encode({
           'email': email,
@@ -54,7 +30,7 @@ class FormLogin extends StatelessWidget {
         if (data['message'] == 'Login berhasil') {
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(builder: (context) => LandingPage()),
+            MaterialPageRoute(builder: (context) => OrderDetailPage()),
           );
         } else {
           ScaffoldMessenger.of(context).showSnackBar(
@@ -94,12 +70,19 @@ class FormLogin extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 8),
+              // const Text(
+              //   'Log in now to continue',
+              //   style: TextStyle(
+              //     fontSize: 16,
+              //     color: Colors.grey,
+              //   ),
+              // ),
 
               const SizedBox(height: 20),
 
               // Gambar
               Image.asset(
-                'assets/logoLogin.png',
+                'assets/logoLogin.png', // Pastikan file ini ada di folder assets Anda
                 height: 150,
               ),
 
@@ -185,7 +168,7 @@ class FormLogin extends StatelessWidget {
                   );
                 },
                 child: Image.asset(
-                  'assets/logoGoogle.png',
+                  'assets/logoGoogle.png', // Pastikan logo Google Anda ada di folder assets
                   height: 40,
                 ),
               ),

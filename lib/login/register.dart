@@ -21,17 +21,23 @@ class _HalamanDaftarState extends State<HalamanDaftar> {
     String password = _passwordController.text;
 
     // Validasi input
-    if (nama.isEmpty || email.isEmpty || password.isEmpty) {
+    if (!validateName(nama)) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Silakan isi semua field')),
+        SnackBar(content: Text('Nama harus memiliki minimal 3 karakter')),
       );
       return;
     }
 
-    // Validasi format email
-    if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(email)) {
+    if (!validateEmail(email)) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Masukkan alamat email yang valid')),
+      );
+      return;
+    }
+
+    if (!validatePassword(password)) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Password harus memiliki minimal 6 karakter')),
       );
       return;
     }
@@ -186,5 +192,20 @@ class _HalamanDaftarState extends State<HalamanDaftar> {
         ),
       ),
     );
+  }
+
+  // Fungsi validasi nama
+  bool validateName(String name) {
+    return name.isNotEmpty && name.length >= 3;
+  }
+
+  // Fungsi validasi email
+  bool validateEmail(String email) {
+    return email.isNotEmpty && RegExp(r'^[^@]+@[^@]+\.[^@]+\$').hasMatch(email);
+  }
+
+  // Fungsi validasi password
+  bool validatePassword(String password) {
+    return password.isNotEmpty && password.length >= 6;
   }
 }

@@ -13,6 +13,7 @@ dependencies:
   http: ^1.2.2
   cupertino_icons: ^1.0.8
   image_picker: ^0.8.7+3
+  mockito: ^5.0.0
   # qr_code_tools: ^1.0.3
   # qr_code_scanner: ^0.6.1
   # permission_handler: ^10.0.0

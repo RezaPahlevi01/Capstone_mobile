@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
+import 'package:flutter_application_coba_capsten/topup.dart';
 import 'register.dart'; 
-import 'formlogin.dart'; // Pastikan FormLogin diimpor
+import 'formlogin.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key}); // Constructor
@@ -15,7 +15,7 @@ class Login extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Image.asset(
-              'assets/logoAwal.png', // Ganti dengan path gambar yang sudah disiapkan
+              'assets/logoLogin.png', // Ganti dengan path gambar yang sudah disiapkan
               height: 150,
             ),
             SizedBox(height: 20),
@@ -54,7 +54,7 @@ class Login extends StatelessWidget {
                 elevation: 5,
               ),
               child: Text(
-                'Log In',
+                'Login User',
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w800,
@@ -84,6 +84,33 @@ class Login extends StatelessWidget {
                   fontSize: 18,
                   fontWeight: FontWeight.w800,
                   color: Colors.black,
+                ),
+              ),
+            ),
+            SizedBox(height: 20), // Tambahan jarak antar tombol
+            ElevatedButton(
+              onPressed: () {
+                // Navigasi ke halaman pengepul
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => FormLogin()),
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.red,
+                padding: EdgeInsets.symmetric(horizontal: 80, vertical: 15),
+                minimumSize: Size(200, 50),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                elevation: 5,
+              ),
+              child: Text(
+                'Login Pengepul',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w800,
+                  color: Colors.white,
                 ),
               ),
             ),

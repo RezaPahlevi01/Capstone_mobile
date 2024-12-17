@@ -1,7 +1,46 @@
 import 'package:flutter/material.dart';
 import 'banksampah.dart'; // Pastikan file banksampah.dart sudah ada
 
-class Penjualan extends StatelessWidget {
+class Penjualan extends StatefulWidget {
+  @override
+  _PenjualanState createState() => _PenjualanState();
+}
+
+class _PenjualanState extends State<Penjualan> {
+  final _jenisSampahController = TextEditingController();
+  final _beratSampahController = TextEditingController();
+  final _alamatController = TextEditingController();
+
+  // Fungsi untuk memvalidasi dan mengarahkan ke BankSampah
+  void _submitForm() {
+    if (_jenisSampahController.text.isEmpty ||
+        _beratSampahController.text.isEmpty ||
+        _alamatController.text.isEmpty) {
+      // Menampilkan alert dialog jika form kosong
+      showDialog(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          title: Text('Form Tidak Lengkap'),
+          content: Text('Pastikan semua field terisi dengan benar.'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(ctx).pop();
+              },
+              child: Text('OK'),
+            ),
+          ],
+        ),
+      );
+    } else {
+      // Jika form lengkap, navigasi ke screen selanjutnya
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => BankSampah()),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,6 +133,7 @@ class Penjualan extends StatelessWidget {
                   SizedBox(height: 20),
                   // Field Jenis Sampah
                   TextField(
+                    controller: _jenisSampahController,
                     decoration: InputDecoration(
                       labelText: 'Jenis sampah',
                       prefixIcon: Icon(Icons.delete, color: Colors.green),
@@ -105,6 +145,7 @@ class Penjualan extends StatelessWidget {
                   SizedBox(height: 16),
                   // Field Berat Sampah
                   TextField(
+                    controller: _beratSampahController,
                     decoration: InputDecoration(
                       labelText: 'Berat sampah',
                       prefixIcon: Icon(Icons.scale, color: Colors.green),
@@ -117,6 +158,7 @@ class Penjualan extends StatelessWidget {
                   SizedBox(height: 16),
                   // Field Alamat
                   TextField(
+                    controller: _alamatController,
                     decoration: InputDecoration(
                       labelText: 'Alamat',
                       prefixIcon: Icon(Icons.location_on, color: Colors.green),
@@ -130,13 +172,7 @@ class Penjualan extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {
-                        // Arahkan ke screen selanjutnya
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => BankSampah()),
-                        );
-                      },
+                      onPressed: _submitForm, // Menjalankan fungsi submit
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.green,
                         padding: EdgeInsets.symmetric(vertical: 16),
