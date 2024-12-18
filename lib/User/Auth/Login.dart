@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_coba_capsten/topup.dart';
-import 'register.dart'; 
-import 'formlogin.dart';
+import 'package:flutter_application_coba_capsten/Pengepul/Auth/formpengepul.dart';
+import 'package:flutter_application_coba_capsten/Pengepul/UI/topup.dart';
+import 'package:flutter_application_coba_capsten/User/Auth/register.dart'; 
+import 'package:flutter_application_coba_capsten/User/Auth/formlogin.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key}); // Constructor
@@ -62,38 +63,38 @@ class Login extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20),
-            OutlinedButton(
-              onPressed: () {
-                // Navigasi ke halaman register
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => HalamanDaftar()),
-                );
-              },
-              style: OutlinedButton.styleFrom(
-                padding: EdgeInsets.symmetric(horizontal: 90, vertical: 15),
-                minimumSize: Size(200, 50),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
-              child: Text(
-                'Register',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w800,
-                  color: Colors.black,
-                ),
-              ),
-            ),
+            // SizedBox(height: 20),
+            // OutlinedButton(
+            //   onPressed: () {
+            //     // Navigasi ke halaman register
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(builder: (context) => HalamanDaftar()),
+            //     );
+            //   },
+            //   style: OutlinedButton.styleFrom(
+            //     padding: EdgeInsets.symmetric(horizontal: 90, vertical: 15),
+            //     minimumSize: Size(200, 50),
+            //     shape: RoundedRectangleBorder(
+            //       borderRadius: BorderRadius.circular(10),
+            //     ),
+            //   ),
+            //   child: Text(
+            //     'Register',
+            //     style: TextStyle(
+            //       fontSize: 18,
+            //       fontWeight: FontWeight.w800,
+            //       color: Colors.black,
+            //     ),
+            //   ),
+            // ),
             SizedBox(height: 20), // Tambahan jarak antar tombol
             ElevatedButton(
               onPressed: () {
                 // Navigasi ke halaman pengepul
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => FormLogin()),
+                  MaterialPageRoute(builder: (context) => FormLoginpengepul()),
                 );
               },
               style: ElevatedButton.styleFrom(

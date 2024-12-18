@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_coba_capsten/login/login.dart';
-import 'package:flutter_application_coba_capsten/pengepul.dart';
+import 'package:flutter_application_coba_capsten/User/Auth/login.dart';
+import 'package:flutter_application_coba_capsten/Pengepul/UI/pengepul.dart';
 void main() {
   runApp(const MyApp());
 }

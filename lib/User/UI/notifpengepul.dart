@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_coba_capsten/detailnotif.dart';
+import 'package:flutter_application_coba_capsten/Pengepul/UI/detailnotif.dart';
 
 class NotificationPage extends StatefulWidget {
   @override

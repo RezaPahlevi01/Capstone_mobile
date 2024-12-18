@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'pengepul.dart';
-import 'profile.dart';
+import '../../User/UI/profile.dart';
 
 class NotificationScreen extends StatefulWidget {
   @override

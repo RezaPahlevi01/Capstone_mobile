@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_coba_capsten/detailnotif.dart';
-import 'package:flutter_application_coba_capsten/notifikasi.dart';
-import 'package:flutter_application_coba_capsten/profilepengepul.dart';
-import 'topup.dart';
-import 'profile.dart'; // Import halaman profil
+import 'package:flutter_application_coba_capsten/Pengepul/UI/detailnotif.dart';
+import 'package:flutter_application_coba_capsten/Pengepul/UI/notifikasi.dart';
+import 'package:flutter_application_coba_capsten/Pengepul/UI/profilepengepul.dart';
+import 'package:flutter_application_coba_capsten/Pengepul/UI/topup.dart';
+import '../../User/UI/profile.dart'; // Import halaman profil
 import 'notifikasi.dart';
 
 

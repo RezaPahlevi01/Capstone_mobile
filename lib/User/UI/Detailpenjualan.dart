@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_coba_capsten/banksampah.dart';
+import 'package:flutter_application_coba_capsten/User/UI/banksampah.dart';
 import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
 import 'dart:io' as io;

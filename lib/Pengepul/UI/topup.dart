@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_coba_capsten/notifikasi.dart';
-import 'package:flutter_application_coba_capsten/pengepul.dart';
-import 'package:flutter_application_coba_capsten/profilepengepul.dart';
+import 'package:flutter_application_coba_capsten/Pengepul/UI/notifikasi.dart';
+import 'package:flutter_application_coba_capsten/Pengepul/UI/pengepul.dart';
+import 'package:flutter_application_coba_capsten/Pengepul/UI/profilepengepul.dart';
 
 class OrderDetailPage extends StatefulWidget {
   @override
